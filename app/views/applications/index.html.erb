@@ -1,0 +1,35 @@
+<h1>Listing applications</h1>
+
+<table>
+  <tr>
+    <th>Cv</th>
+    <th>Linkedin</th>
+    <th>Priority</th>
+    <th>Military status</th>
+    <th>Vacany</th>
+    <th>Application status</th>
+    <th>Applicant</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @applications.each do |application| %>
+  <tr>
+    <td><%= application.cv %></td>
+    <td><%= application.linkedin %></td>
+    <td><%= application.priority %></td>
+    <td><%= application.military_status %></td>
+    <td><%= application.vacany_id %></td>
+    <td><%= application.application_status %></td>
+    <td><%= application.applicant_id %></td>
+    <td><%= link_to 'Show', application %></td>
+    <td><%= link_to 'Edit', edit_application_path(application) %></td>
+    <td><%= link_to 'Destroy', application, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Application', new_application_path %>

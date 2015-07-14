@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  cv: MyString
+  linkedin: MyString
+  priority: 1
+  military_status: 1
+  vacany_id: 
+  application_status: 1
+  applicant_id: 1
+
+two:
+  cv: MyString
+  linkedin: MyString
+  priority: 1
+  military_status: 1
+  vacany_id: 
+  application_status: 1
+  applicant_id: 1

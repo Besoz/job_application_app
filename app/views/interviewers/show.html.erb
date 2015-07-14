@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @interviewer.name %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%= @interviewer.position %>
+</p>
+
+
+<%= link_to 'Edit', edit_interviewer_path(@interviewer) %> |
+<%= link_to 'Back', interviewers_path %>
