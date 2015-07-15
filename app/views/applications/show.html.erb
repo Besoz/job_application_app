@@ -36,5 +36,29 @@
 </p>
 
 
+<table>
+  <tr>
+    <th>Score</th>
+    <th>Application</th>
+    <th>Type</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @application.interviews.each do |interview| %>
+  <tr>
+    <td><%= interview.score %></td>
+    <td><%= interview.application_id %></td>
+    <td><%= interview.type_id %></td>
+    <td><%= link_to 'Show', interview %></td>
+    <td><%= link_to 'Edit', edit_interview_path(interview) %></td>
+    <td><%= link_to 'Destroy', interview, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+
+
 <%= link_to 'Edit', edit_application_path(@application) %> |
 <%= link_to 'Back', applications_path %>

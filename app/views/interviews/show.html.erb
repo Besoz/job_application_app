@@ -15,6 +15,16 @@
   <%= @interview.type_id %>
 </p>
 
+<p>
+  <b>applicant:</b>
+  <%= @interview.application.applicant.name %>
+</p>
+
+<p>
+  <b>interviewer:</b>
+  <%= @interview.application.interviewer.name %>
+</p>
+
 
 <%= link_to 'Edit', edit_interview_path(@interview) %> |
 <%= link_to 'Back', interviews_path %>
