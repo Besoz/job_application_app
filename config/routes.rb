@@ -1,4 +1,6 @@
 JobApplicationApp::Application.routes.draw do
+  get "sessions/new"
+
   resources :interviews
 
 
@@ -9,6 +11,12 @@ JobApplicationApp::Application.routes.draw do
 
 
   resources :interviewers
+
+  resources :sessions, :only => [:new, :create, :destroy]
+
+  match '/signup', :to => 'interviewers#new'
+  match '/signin', :to => 'sessions#new'
+  match '/signout', :to => 'sessions#destroy'
 
 
   # The priority is based upon order of creation:
