@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150715124605) do
+ActiveRecord::Schema.define(:version => 20150716103225) do
 
   create_table "applicants", :force => true do |t|
     t.string   "name"
@@ -45,9 +45,16 @@ ActiveRecord::Schema.define(:version => 20150715124605) do
   create_table "interviews", :force => true do |t|
     t.integer  "score"
     t.integer  "application_id"
-    t.integer  "type_id"
+    t.integer  "vancantjob_id"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+  end
+
+  create_table "vacant_jobs", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
 end

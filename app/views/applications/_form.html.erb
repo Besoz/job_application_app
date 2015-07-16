@@ -11,6 +11,17 @@
     </div>
   <% end %>
 
+
+  <div class="field">
+    <label for="user_name">Name</label><br />
+    <input id="user_name" name="name_label" size="30" type="text" />
+  </div>
+
+  <div class="field">
+    <label for="applicant_email">e-mail</label><br />
+    <input id="applicant_email" name="email_label" size="30" type="text" />
+  </div>
+
   <div class="field">
     <%= f.label :cv %><br />
     <%= f.text_field :cv %>
@@ -28,17 +39,9 @@
     <%= f.number_field :military_status %>
   </div>
   <div class="field">
-    <%= f.label :vacany_id %><br />
-    <%= f.text_field :vacany_id %>
+    <%= f.hidden_field :vacany_id, :value => @job_id %>
   </div>
-  <div class="field">
-    <%= f.label :application_status %><br />
-    <%= f.number_field :application_status %>
-  </div>
-  <div class="field">
-    <%= f.label :applicant_id %><br />
-    <%= f.number_field :applicant_id %>
-  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -21,7 +21,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
+gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'bootstrap-generators', '~> 3.3.4'
 
 # To use ActiveModel has_secure_password

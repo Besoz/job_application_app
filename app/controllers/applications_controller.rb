@@ -25,7 +25,11 @@ class ApplicationsController < ApplicationController
   # GET /applications/new.json
   def new
     @application = Application.new
-
+    puts params.to_json
+    @job_id = params[:job_id]
+    puts "ffffffffffffffffffffffffffffff"
+    puts @job_id
+    puts "ffffffffffffffffffffffffffffff"
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @application }
@@ -40,7 +44,22 @@ class ApplicationsController < ApplicationController
   # POST /applications
   # POST /applications.json
   def create
-    @application = Application.new(params[:application])
+    #puts params.to_json
+    #puts params["name_label"]
+    applicant = Applicant.find_by_email(params["email_label"])
+    #puts applicant.to_json
+    if applicant == nil
+      #applicant found add new appliccation to it
+      applicant = Applicant.create(:name => params["name_label"], 
+        :email => params["email_label"])
+    end
+    @application = Application.new(:cv =>params[:application][:cv], 
+      :linkedin => params[:application][:linkedin], 
+      :priority => params[:application][:priority], 
+      :military_status => params[:application][:military_status], 
+      :vacant_job_id => params[:application][:vacant_job_id], 
+      :application_status => "1", 
+      :applicant_id => applicant.id )
 
     respond_to do |format|
       if @application.save

@@ -1,4 +1,8 @@
 JobApplicationApp::Application.routes.draw do
+  
+  resources :vacant_jobs
+
+
   get "sessions/new"
 
   resources :interviews

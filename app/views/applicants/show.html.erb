@@ -19,7 +19,6 @@
     <th>Linkedin</th>
     <th>Priority</th>
     <th>Military status</th>
-    <th>Vacany</th>
     <th>Application status</th>
     <th>Applicant</th>
     <th></th>
@@ -33,9 +32,8 @@
     <td><%= application.linkedin %></td>
     <td><%= application.priority %></td>
     <td><%= application.military_status %></td>
-    <td><%= application.vacany_id %></td>
     <td><%= application.application_status %></td>
-    <td><%= application.applicant_id %></td>
+    <td><%= application.applicant.name %></td>
     <td><%= link_to 'Show', application %></td>
     <td><%= link_to 'Edit', edit_application_path(application) %></td>
     <td><%= link_to 'Destroy', application, method: :delete, data: { confirm: 'Are you sure?' } %></td>
