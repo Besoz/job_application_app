@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150716103225) do
+ActiveRecord::Schema.define(:version => 20150717170642) do
 
   create_table "applicants", :force => true do |t|
     t.string   "name"
@@ -30,22 +30,21 @@ ActiveRecord::Schema.define(:version => 20150716103225) do
     t.integer  "applicant_id"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
-    t.integer  "interviewer_id"
+    t.integer  "vacant_job_id"
   end
 
   create_table "interviewers", :force => true do |t|
     t.string   "name"
     t.string   "position"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.text     "email"
-    t.text     "password"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "encrypted_password"
   end
 
   create_table "interviews", :force => true do |t|
     t.integer  "score"
     t.integer  "application_id"
-    t.integer  "vancantjob_id"
+    t.integer  "type_id"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
